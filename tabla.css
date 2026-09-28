@@ -24,7 +24,7 @@ table#tablaConEstilo {
 
 /* Celdas */
 table#tablaConEstilo th, table#tablaConEstilo td {
-  padding: 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid #444;
 }
 
