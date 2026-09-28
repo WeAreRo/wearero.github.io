@@ -1,8 +1,8 @@
 /* Fondo general gris oscuro muy suave y centrado */
 body {
   font-family: Arial, sans-serif;
-  background-color: #272727; /* fondo oscuro fijo */
-  color: #e0e0e0; /* texto gris clarito para contraste */
+  background-color: #272727;
+  color: #e0e0e0;
   margin: 20px;
 }
 
@@ -11,7 +11,7 @@ body {
   background: #333333; /* un gris un poco más claro */
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* Tabla oscura legible */
@@ -23,7 +23,8 @@ table#tablaConEstilo {
 }
 
 /* Celdas */
-table#tablaConEstilo th, table#tablaConEstilo td {
+table#tablaConEstilo th,
+table#tablaConEstilo td {
   padding: 12px 20px;
   border-bottom: 1px solid #444;
 }
@@ -47,7 +48,7 @@ table#tablaConEstilo tr:hover {
 
 @media screen and (max-width: 768px) {
   table.dataTable {
-    font-size: 12px;        /* letra más chica */
+    font-size: 12px; /* letra más chica */
   }
 
   table.dataTable td,
@@ -56,16 +57,16 @@ table#tablaConEstilo tr:hover {
   }
 
   .dataTables_wrapper {
-    transform: scale(0.9);  /* la exprime un poquito */
+    transform: scale(0.9); /* la exprime un poquito */
     transform-origin: top left;
   }
 }
 
 #tablaConEstilo ul {
-    margin: 0;          /* elimina margen externo */
-    padding: 0;         /* elimina indentación interna */
-    list-style-position: inside; /* bullets adentro del bloque */
-    list-style-type: disc;       /* opcional: asegúrate que sean bolitas */
+  margin: 0; /* elimina margen externo */
+  padding: 0; /* elimina indentación interna */
+  list-style-position: inside; /* bullets adentro del bloque */
+  list-style-type: disc; /* opcional: asegúrate que sean bolitas */
 }
 
 .dt-layout-row:not([class*=" "]) {
@@ -80,12 +81,15 @@ table#tablaConEstilo tr:hover {
   padding: 8px 10px !important;
 }
 
-th.url-column, td.url-column {
+th.url-column,
+td.url-column {
   min-width: 120px !important;
 }
-th.precio-column, td.precio-column {
+th.precio-column,
+td.precio-column {
   min-width: 140px !important;
 }
-th.fecha-column, td.fecha-column {
+th.fecha-column,
+td.fecha-column {
   min-width: 120px !important;
 }
