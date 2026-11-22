@@ -1,11 +1,11 @@
-/* app.css: lo propio de Noco-Webhook. Se carga después de base.css y siempre gana (ESTANDAR §11). */
+/* app.css: lo propio de Optarium. Se carga después de base.css y siempre gana (ESTANDAR §11). */
 
 :root {
   --accent: #7b8da6;
 }
 
-/* La tabla es parte de la página (el scroll es el de la página, sin contenedor propio) y la ordena
-   DataTables, sin su hoja de estilos. */
+/* Wishlist pública: la tabla es parte de la página (el scroll es el de la página, sin contenedor propio) y la
+   ordena DataTables, sin su hoja de estilos. */
 .table {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -84,6 +84,10 @@ td.url-column {
     z-index: 1;
     background: var(--surface);
   }
+  /* La celda fija es opaca; al pasar el cursor debe tomar el mismo color que el resto de la fila. */
+  .table tbody tr:hover td:first-child {
+    background: var(--surface-2);
+  }
 }
 
 .toolbar {
@@ -117,8 +121,160 @@ td.url-column {
   .fit-screen .table th:first-child,
   .fit-screen .table td:first-child {
     position: static; /* no hay scroll lateral: la columna no necesita quedar fija */
+    background: transparent; /* deja ver el color de la fila (hover) */
   }
   .fit-screen .table td.precio-column {
     white-space: nowrap;
   }
+}
+
+
+/* ───────────── La app (lista, formulario y resumen) ───────────── */
+
+.table-wrap .table {
+  border: 0;
+}
+.nav-title {
+  margin: var(--space-4) 0 var(--space-1);
+  padding: 0 var(--space-3);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+}
+.nav a .num {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: var(--text-xs);
+}
+.sidebar-foot {
+  margin-top: auto;
+}
+.sidebar-foot select,
+.topbar select {
+  width: 100%;
+}
+.topbar select {
+  width: auto;
+}
+.page-head h1 + p {
+  margin-top: var(--space-1);
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+.segmented {
+  display: inline-flex;
+}
+.segmented .btn {
+  border-radius: 0;
+}
+.segmented .btn + .btn {
+  margin-left: -1px;
+}
+.segmented .btn:first-child {
+  border-radius: var(--r1) 0 0 var(--r1);
+}
+.segmented .btn:last-child {
+  border-radius: 0 var(--r1) var(--r1) 0;
+}
+.segmented .btn[aria-current="true"],
+.btn[aria-pressed="true"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.chips .chip[aria-current="true"] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.chips a.chip {
+  text-decoration: none;
+}
+.bulk-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--r2);
+}
+.bulk-bar[hidden] {
+  display: none;
+}
+.bulk-bar .grow {
+  flex: 1;
+}
+.js-list:not([data-selecting]) .col-select {
+  display: none;
+}
+.col-select {
+  width: 2.75rem;
+}
+.table th a.sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: inherit;
+  text-decoration: none;
+}
+.table th a.sort[aria-sort]::after {
+  content: "";
+  border-inline: 4px solid transparent;
+}
+.table th a.sort[aria-sort="ascending"]::after {
+  border-bottom: 5px solid currentColor;
+}
+.table th a.sort[aria-sort="descending"]::after {
+  border-top: 5px solid currentColor;
+}
+.table td.cell-main a {
+  color: inherit;
+  text-decoration: none;
+}
+.table td.cell-main a:hover {
+  text-decoration: underline;
+}
+.table tfoot td {
+  border-top: 1px solid var(--line-strong);
+  font-weight: var(--weight-strong);
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-3);
+}
+.stat-label {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+.stat-value {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-strong);
+}
+.form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--w-read);
+}
+.form-actions .push {
+  margin-right: auto;
+}
+.chips .chip::before {
+  display: none;
+}
+.table ul.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

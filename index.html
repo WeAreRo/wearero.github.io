@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="es" data-app="Noco-Webhook" data-tint="neutral" data-shape="sharp" data-density="compact" data-voice="sans" data-numbers="inter">
+<html lang="es" data-app="Optarium" data-tint="neutral" data-shape="sharp" data-density="compact" data-voice="sans" data-numbers="inter">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=480">
-<title>Noco-Webhook - Wishlist</title>
+<title>Optarium - Wishlist</title>
 <meta name="theme-color" content="#7b8da6">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <!-- theme.js va antes de las hojas: así el tema elegido se aplica sin parpadeo -->
@@ -16,1007 +16,646 @@
 <main class="main">
 <div class="page page-wide">
 
-
-<table class="table" id="tablaConEstilo">
+<table class="table" id="wishlist">
 <thead>
 <tr>
 <th scope="col">Nombre</th>
-<th scope="col">Precio</th>
+<th scope="col" class="precio-column">Precio</th>
 <th scope="col">Prioridad</th>
 <th scope="col">Categoría</th>
-<th scope="col">Estado</th>
-<th scope="col">Fecha estimada</th>
-<th scope="col">Proyecto</th>
-<th scope="col">Fecha compra</th>
-<th scope="col">URL</th>
+<th scope="col" class="url-column">URL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Adidas Court</td>
-<td>24990</td>
+<td data-order="24990">$ 24.990</td>
 <td>1. Alta</td>
 <td>Ropa</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.adidas.cl/zapatillas-court/IE0927.html?forceSelSize=US+9" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Ubiquiti U6+</td>
-<td>123990</td>
+<td data-order="123990">$ 123.990</td>
 <td>1. Alta</td>
 <td>Servidor</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Servidor</td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/gp/product/B0CC7X8XFD" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>MikroTik RB5009UPr+S+in</td>
-<td>280000</td>
+<td data-order="280000">$ 280.000</td>
 <td>1. Alta</td>
 <td>Servidor</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Servidor</td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/gp/product/B0BBW159WW" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Mario Kart World</td>
-<td>72000</td>
+<td data-order="72000">$ 72.000</td>
 <td>1. Alta</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.mercadolibre.cl/videojuego-mario-kart-world-nintendo-switch-2-fisico/p/MLC49537584" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Adaptador de montura Canon EF -&gt; RF</td>
-<td>111491</td>
+<td data-order="111491">$ 111.491</td>
 <td>2. Media</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2025-12-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/adaptador-de-montura-de-lente-ef-eos-r?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Logitech MX Keys S</td>
-<td>125990</td>
+<td data-order="125990">$ 125.990</td>
 <td>2. Media</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2025-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.mercadolibre.cl/teclado-logitech-mx-keys-s-color-grafito/p/MLC27081469" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>NEEWER LITETRIP LT38</td>
-<td>229990</td>
+<td data-order="229990">$ 229.990</td>
 <td>2. Media</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-03-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/gp/product/B0D9QNVMGJ" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Seiko 5 SNKE03KC</td>
-<td>195000</td>
+<td data-order="195000">$ 195.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2026-03-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-seiko/products/reloj-seiko-5-analogo-automatico-snke03kc-metalico-36mm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Sigma 12mm F/1.4 DC DN Contemporary (Canon RF)</td>
-<td>519990</td>
+<td data-order="519990">$ 519.990</td>
 <td>2. Media</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.mifotopro.cl/producto/lente-sigma-af-12mm-f-1-4-dc-c-para-canon-rf/" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon RF 14mm f/1.4L VCM</td>
-<td>2464992</td>
+<td data-order="2464992">$ 2.464.992</td>
 <td>2. Media</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-14mm-f-1-4l-vcm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Seiko 5 SSK025</td>
-<td>480000</td>
+<td data-order="480000">$ 480.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2027-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-seiko-5-gmt-automatic-ssk025-metalico-made-in-japan-40mm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Seiko Conceptual SRPH87K1</td>
-<td>330000</td>
+<td data-order="330000">$ 330.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://seikoboutique.cl/products/srph87k1" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio GW-B5600BC-1B</td>
-<td>195000</td>
+<td data-order="195000">$ 195.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.casio.com/es/watches/gshock/product.GW-B5600BC-1B/" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio GA-B2100-1A</td>
-<td>140000</td>
+<td data-order="140000">$ 140.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-casio-g-shock-tough-solar-casioak-ga-b2100-1adr-carbon-core" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio A168WGG-1B</td>
-<td>68000</td>
+<td data-order="68000">$ 68.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-casio-vintage-a168wgg-1bdf-negro-pantalla-negativa" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio A159WEVJ-2</td>
-<td>85000</td>
+<td data-order="85000">$ 85.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-casio-vintage-a159wevj-2-azul-made-in-japan" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio A130WEGG-1A</td>
-<td>110000</td>
+<td data-order="110000">$ 110.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-casio-vintage-a130wegg-1a" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio MTP-E740-3AV</td>
-<td>110000</td>
+<td data-order="110000">$ 110.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-casio-analogo-mtp-e740-2a1-skeleton-day-date-azul-39-8mm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio MTP-B220D-1AVDF</td>
-<td>99990</td>
+<td data-order="99990">$ 99.990</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://larelojeria.cl/products/reloj-analogo-casio-hombre-mtp-b220d-1avdf" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Citizen Attesa CB3045-61L</td>
-<td>500000</td>
+<td data-order="500000">$ 500.000</td>
 <td>2. Media</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.sakurawatches.com/citizen-attesa-act-line-black-titanium%E2%84%A2-series-cb3045-61l" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>ASUS TUF VG27AQ5A</td>
-<td>184700</td>
+<td data-order="184700">$ 184.700</td>
 <td>2. Media</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.solotodo.cl/products/355701-asus-tuf-vg27aq5a" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Sigma 50-120mm f/2.8 DC OS Contemporary Lens (Canon RF)</td>
-<td>929900</td>
+<td data-order="929900">$ 929.900</td>
 <td>2. Media</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.horizontalfoto.cl/sigma-50-120mm-f28-dc-os-contemporary-lens-canon-rf" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Seiko 5 SRPG41</td>
-<td>395000</td>
+<td data-order="395000">$ 395.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2026-03-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-seiko/products/reloj-seiko-5-analogo-automatico-srpg41k1-metalico-39-4mm-field-made-in-japan" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Detective Beans: and the Case of the Missing Hat Hardcover</td>
-<td>18990</td>
+<td data-order="18990">$ 18.990</td>
 <td>3. Baja</td>
 <td>Libros</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Detective-Beans-Case-Missing-Hat/dp/1524895164" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Detective Beans: Adventures in Cat Town Hardcover</td>
-<td>19990</td>
+<td data-order="19990">$ 19.990</td>
 <td>3. Baja</td>
 <td>Libros</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Detective-Beans-Adventures-Cat-Town/dp/B0DV4NQWST" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Detective Beans: and the Map of Mystery</td>
-<td>19990</td>
+<td data-order="19990">$ 19.990</td>
 <td>3. Baja</td>
 <td>Libros</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Detective-Beans-Map-Mystery-3/dp/B0GPNKFG6G" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>FINAL FANTASY I-VI Collection Anniversary Edition</td>
-<td>66990</td>
+<td data-order="66990">$ 66.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2026-06-30</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/FINAL-FANTASY-Collection-Anniversary-Nintendo-Switch/dp/B0DCKFWW1V" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>FINAL FANTASY TACTICS –The Ivalice Chronicles</td>
-<td>50990</td>
+<td data-order="50990">$ 50.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2026-06-30</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/FANTASY-TACTICS-Chronicles-Exclusive-Nintendo-Switch/dp/B0FBZYSJXM" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon RF 800mm f/11 IS STM</td>
-<td>1052392</td>
+<td data-order="1052392">$ 1.052.392</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-800mm-f-11-is-stm?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon RF 100-400mm f/5.6-8 IS USM</td>
-<td>701392</td>
+<td data-order="701392">$ 701.392</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-100-400mm-f-5-6-8-is-usm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon RF 600mm f/11 IS STM</td>
-<td>785592</td>
+<td data-order="785592">$ 785.592</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-600mm-f-11-is-stm?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>RF 28-70mm f/2.8 IS STM</td>
-<td>1274992</td>
+<td data-order="1274992">$ 1.274.992</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-06-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-28-70mm-f-2-8-is-stm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Batidora de pedestal Oster FPSTSMPL4W</td>
-<td>171000</td>
+<td data-order="171000">$ 171.000</td>
 <td>3. Baja</td>
 <td>Hogar</td>
-<td>Pendiente</td>
-<td>2027-06-25</td>
-<td></td>
-<td></td>
 <td><ul></ul></td>
 </tr>
 <tr>
 <td>RF 70-200mm f/2.8L IS USM</td>
-<td>3144992</td>
+<td data-order="3144992">$ 3.144.992</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-70-200mm-f-2-8l-is-usm?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon EOS R6 Mark III</td>
-<td>2294990</td>
+<td data-order="2294990">$ 2.294.990</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/eos-r6-mark-iii-body" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon RF 24-105mm f/4L IS USM</td>
-<td>1419192</td>
+<td data-order="1419192">$ 1.419.192</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-12-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-24-105mm-f-4l-is-usm?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Seiko 5 SRPD65</td>
-<td>460000</td>
+<td data-order="460000">$ 460.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2027-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-seiko-5-analogo-automatico-srpd65-metalico-42mm-made-in-japan" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>RF 100-500mm f/4.5-7.1L IS USM</td>
-<td>3229992</td>
+<td data-order="3229992">$ 3.229.992</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2028-01-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/rf-100-500mm-f-4-5-7-1l-is-usm?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Canon EOS R7 Body</td>
-<td>1352992</td>
+<td data-order="1352992">$ 1.352.992</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2028-06-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.canontiendaonline.cl/es_cl/p/eos-r7-body?merchandise_type=New" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Servidor</td>
-<td>1196639</td>
+<td data-order="1196639">$ 1.196.639</td>
 <td>3. Baja</td>
 <td>Servidor</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Servidor</td>
-<td></td>
 <td><ul></ul></td>
 </tr>
 <tr>
 <td>TRMNL</td>
-<td>189990</td>
+<td data-order="189990">$ 189.990</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Servidor</td>
-<td></td>
 <td><ul></ul></td>
 </tr>
 <tr>
 <td>Persona 5 Royal: Standard Edition</td>
-<td>39990</td>
+<td data-order="39990">$ 39.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/gp/product/B0BF9L5CK8" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Octopath Traveller II</td>
-<td>39990</td>
+<td data-order="39990">$ 39.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/gp/product/B0BF66G8F9" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Impresora 3D Elegoo Mars 5 Ultra</td>
-<td>439990</td>
+<td data-order="439990">$ 439.990</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Criptoscopio</td>
-<td></td>
 <td><ul><li><a href="https://www.todotoner.cl/impresoras/impresoras-3d/impresoras/mars-5-ultra-9k-150mmh" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Anycubic Wash and Cure WC3 Plus</td>
-<td>188990</td>
+<td data-order="188990">$ 188.990</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Criptoscopio</td>
-<td></td>
 <td><ul><li><a href="https://www.todotoner.cl/impresoras/impresoras-3d/impresoras/wash-and-cure-wc3-anycubic" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Bigscreen Beyond 2e</td>
-<td>1220000</td>
+<td data-order="1220000">$ 1.220.000</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://store.bigscreenvr.com/products/bigscreen-beyond-2" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Kirby and the Forgotten Land</td>
-<td>59990</td>
+<td data-order="59990">$ 59.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Kirby-Forgotten-Land-Nintendo-Switch/dp/B09H221SH4" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Kirby’s Return to Dream Land™ Deluxe</td>
-<td>59990</td>
+<td data-order="59990">$ 59.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Kirbys-Return-Dream-LandTM-Deluxe-Nintendo/dp/B0BF7XR94T" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Citizen NH9111-11B</td>
-<td>280000</td>
+<td data-order="280000">$ 280.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-citizen/products/reloj-citizen-nh9111-11b-automatico-40mm-sapphire-made-in-japan-jdm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio MTP-VT01B-1B</td>
-<td>55000</td>
+<td data-order="55000">$ 55.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-casio-vintage/products/reloj-casio-analogo-mtp-vt01b-1b-negro-correa-de-cuero-40mm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio MTP-VT04D-8E</td>
-<td>45000</td>
+<td data-order="45000">$ 45.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-casio-vintage/products/reloj-casio-analogo-mtp-vt04d-8e" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio MTS-115D-7A</td>
-<td>85000</td>
+<td data-order="85000">$ 85.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-casio-vintage/products/reloj-casio-sapphire-analogo-mts-115d-7a-correa-de-acero" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Citizen NY4050-62A</td>
-<td>320000</td>
+<td data-order="320000">$ 320.000</td>
 <td>3. Baja</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/collections/relojes-citizen/products/reloj-citizen-ny4050-62a-cal-8200-automatico-40mm-exclusivo" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Tamron 17-70mm f/2.8 Di III-A VC RXD (Canon RF)</td>
-<td>749700</td>
+<td data-order="749700">$ 749.700</td>
 <td>3. Baja</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://davidandjoseph.cl/index.php?route=product/product&amp;product_id=58575" rel="noopener noreferrer" target="_blank">Link 1</a></li><li><a href="https://www.horizontalfoto.cl/tamron-17-70mm-f28-di-iii-a-vc-rxd-canon-rf" rel="noopener noreferrer" target="_blank">Link 2</a></li></ul></td>
 </tr>
 <tr>
 <td>Beryl AX (GL-MT3000)</td>
-<td>99990</td>
+<td data-order="99990">$ 99.990</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2027-11-01</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/GL-iNet-GL-MT3000-Pocket-Sized-Wireless-Gigabit/dp/B0BPSGJN7T?" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Nvidia GeForce RTX 5070 Ti 16G</td>
-<td>1499990</td>
+<td data-order="1499990">$ 1.499.990</td>
 <td>3. Baja</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.solotodo.cl/tarjetas_de_video?gpu_brands=106034&amp;gpus=2021153&amp;length_min=303&amp;length_max=338&amp;ordering=offer_price_usd" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Xenoblade Chronicles 3</td>
-<td>39990</td>
+<td data-order="39990">$ 39.990</td>
 <td>3. Baja</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.mercadolibre.cl/xenoblade-chronicles-3-standard-edition-fisico/p/MLC19472089" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio EFK-110D-2AER</td>
-<td>250000</td>
+<td data-order="250000">$ 250.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2026-10-30</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.baroli.es/reloj-casio-edifice/efk-110d-2aer/" rel="noopener noreferrer" target="_blank">Link 1</a></li><li><a href="https://www.elcorteingles.es/joyeria-y-relojes/A200865696-azul-pr-reloj-edifice-automatic-efk-110d-2aer-de-acero/" rel="noopener noreferrer" target="_blank">Link 2</a></li></ul></td>
 </tr>
 <tr>
 <td>Godox ML100R</td>
-<td>199990</td>
+<td data-order="199990">$ 199.990</td>
 <td>4. No prioritario</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/dp/B0F1CW65QK" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>The Art of Futurama: A Visual History of Matt Groening’s Cult Classic Animated Series</td>
-<td>12990</td>
+<td data-order="12990">$ 12.990</td>
 <td>4. No prioritario</td>
 <td>Libros</td>
-<td>Pendiente</td>
-<td>2026-06-25</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.amazon.com/Art-Futurama-Matt-Groening/dp/141977350X" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Hoverpen Interstellar</td>
-<td>110000</td>
+<td data-order="110000">$ 110.000</td>
 <td>4. No prioritario</td>
 <td>Otros</td>
-<td>Pendiente</td>
-<td>2026-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://noviumdesign.com/products/hoverpen-interstellar?variant=45213075931439" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Godox V860 III Para Canon</td>
-<td>219990</td>
+<td data-order="219990">$ 219.990</td>
 <td>4. No prioritario</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-03-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://fotosimple.cl/store/producto/flash-godox-v860iii-para-canon-ttl-hss-con-bateria/" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Godox X2T-C</td>
-<td>69990</td>
+<td data-order="69990">$ 69.990</td>
 <td>4. No prioritario</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2027-03-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul><li><a href="https://fotosimple.cl/store/producto/trigger-godox-x2t-s-para-canon/" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Tissot PR100 Jungfraubahn 40MM</td>
-<td>450000</td>
+<td data-order="450000">$ 450.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2027-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.zait.cl/reloj-tissot-pr100-jungfraubahn-acero/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Longines Master Collection L2.773.4.71.2</td>
-<td>5087000</td>
+<td data-order="5087000">$ 5.087.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.zait.cl/reloj-longines-master-collection-l27734712/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Tissot Le Locle Blue T006.407.11.043.00</td>
-<td>900000</td>
+<td data-order="900000">$ 900.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.zait.cl/reloj-tissot-le-locle-powermatic-80-blue/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Tissot Gentleman Open Heart Acero Azul T127.407.11.041.01</td>
-<td>1150000</td>
+<td data-order="1150000">$ 1.150.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.zait.cl/reloj-tissot-gentleman-open-heart-acero-azul/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Festina F16820/2</td>
-<td>186990</td>
+<td data-order="186990">$ 186.990</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://larelojeria.cl/collections/festina/products/reloj-analogo-festina-hombre-f16820-2" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>LTT Insulated Water Bottle</td>
-<td>27990</td>
+<td data-order="27990">$ 27.990</td>
 <td>4. No prioritario</td>
 <td>Otros</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://global.lttstore.com/products/insulated-water-bottle?variant=43417591185453" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>LTT Screwdriver</td>
-<td>61990</td>
+<td data-order="61990">$ 61.990</td>
 <td>4. No prioritario</td>
 <td>Otros</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://global.lttstore.com/products/screwdriver?variant=43417126862893" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>LTT Scribedriver Bolt Action Pen</td>
-<td>27990</td>
+<td data-order="27990">$ 27.990</td>
 <td>4. No prioritario</td>
 <td>Otros</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://global.lttstore.com/products/scribedriver-bolt-action-pen?variant=43417237323821" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>LTT Precision Bit Set + Case</td>
-<td>27990</td>
+<td data-order="27990">$ 27.990</td>
 <td>4. No prioritario</td>
 <td>Otros</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://global.lttstore.com/products/precision-bit-set-case?_pos=8&amp;_fid=a62f479e1&amp;_ss=c" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Ibanez FRM350-BK Paul Gilbert</td>
-<td>1206000</td>
+<td data-order="1206000">$ 1.206.000</td>
 <td>4. No prioritario</td>
 <td>Música</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Música</td>
-<td></td>
 <td><ul><li><a href="https://www.thomann.de/intl/ibanez_frm350_bk_paul_gilbert.htm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Ibanez AEGB24E-MHS</td>
-<td>397000</td>
+<td data-order="397000">$ 397.000</td>
 <td>4. No prioritario</td>
 <td>Música</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Música</td>
-<td></td>
 <td><ul><li><a href="https://www.thomannmusic.com/ibanez_aegb24e_mhs.htm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio PX-S1100CB</td>
-<td>468000</td>
+<td data-order="468000">$ 468.000</td>
 <td>4. No prioritario</td>
 <td>Música</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Música</td>
-<td></td>
 <td><ul><li><a href="https://www.thomann.de/intl/casio_px_s1100cb.htm" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>2x PreSonus Eris 5 Studio</td>
-<td>389980</td>
+<td data-order="389980">$ 389.980</td>
 <td>4. No prioritario</td>
 <td>Música</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td>Música</td>
-<td></td>
 <td><ul><li><a href="https://www.blupointmusic.cl/producto/presonus-eris-studio-5-monitor-de-estudio-unidad/" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Tissot Le Locle Powermatic 80 Open Heart</td>
-<td>990000</td>
+<td data-order="990000">$ 990.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.dandolahora.cl/products/reloj-tissot-le-locle-powermatic-80-open-heart" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Casio OCW-T200SB-1AJF</td>
-<td>465000</td>
+<td data-order="465000">$ 465.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.casio.com/jp/watches/oceanus/product.OCW-T200SB-1A/" rel="noopener noreferrer" target="_blank">Link 1</a></li><li><a href="https://www.sakurawatches.com/casio-oceanus-classic-line-all-black-ip-ocw-t200sb-1ajf" rel="noopener noreferrer" target="_blank">Link 2</a></li></ul></td>
 </tr>
 <tr>
 <td>Mido Baroncelli Midnight 38MM</td>
-<td>920000</td>
+<td data-order="920000">$ 920.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.zait.cl/reloj-hombre-mido-baroncelli-midnight-blue-gent/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Sternglas Naos Edition Aventurine</td>
-<td>310000</td>
+<td data-order="310000">$ 310.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.sternglas.com/products/naos-edition-aventurine-dark-blue" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Zelos Aurora Field 42mm Ti &#39;Aventurine&#39;</td>
-<td>560000</td>
+<td data-order="560000">$ 560.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://zeloswatches.com/products/aurora-field-42mm-ti-aventurine" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Arsenale Avventurina - 6221550</td>
-<td>680000</td>
+<td data-order="680000">$ 680.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.venezianico.com/products/arsenale-avventurina-6221550" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
-<td>Casio MTP-E735B-7AV </td>
-<td>109990</td>
+<td>Casio MTP-E735B-7AV</td>
+<td data-order="109990">$ 109.990</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://larelojeria.cl/collections/casio-hombre/products/reloj-analogo-casio-hombre-mtp-e735b-7av" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Citizen Tsuyosa NJ0151-53E</td>
-<td>385000</td>
+<td data-order="385000">$ 385.000</td>
 <td>4. No prioritario</td>
 <td>Relojería</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://antucotienda.cl/reloj-citizen-automatic-tsuyosa-special-edition-nj0151-53e" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Perry Ellis Abrigo Hunter Marengo</td>
-<td>99990</td>
+<td data-order="99990">$ 99.990</td>
 <td>4. No prioritario</td>
 <td>Ropa</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.perryellis.cl/abrigo-hombre-hunter-marengo-2010107818/p" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Sky-Watcher Explorer 200P Telescopio Newtoniano de 200 mm con montura EQ5-PRO SynScan GoTo</td>
-<td>1559000</td>
+<td data-order="1559000">$ 1.559.000</td>
 <td>4. No prioritario</td>
 <td>Fotografía</td>
-<td>Pendiente</td>
-<td>2035-12-31</td>
-<td>Fotografía</td>
-<td></td>
 <td><ul></ul></td>
 </tr>
 <tr>
 <td>The Legend of Zelda: Ocarina of Time Switch 2</td>
-<td>79990</td>
+<td data-order="79990">$ 79.990</td>
 <td>4. No prioritario</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.mercadolibre.cl/the-legend-of-zelda-ocarina-of-time-nintendo-switch-2/up/MLCU5910176507" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Brother P-Touch QL-810W</td>
-<td>159990</td>
+<td data-order="159990">$ 159.990</td>
 <td>4. No prioritario</td>
 <td>Tecnología</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.todotoner.cl/impresoras-de-etiquetas/ql-810w" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
 <td>Pokémon Pokopia</td>
-<td>64990</td>
+<td data-order="64990">$ 64.990</td>
 <td>4. No prioritario</td>
 <td>Juegos</td>
-<td>Pendiente</td>
-<td>2030-12-31</td>
-<td></td>
-<td></td>
 <td><ul><li><a href="https://www.mercadolibre.cl/videojuego-fisico-nintendo-switch-2-clasificacion-e-pokemon-pokopia/p/MLC65762576" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 </tbody>
 </table>
 
-  <div class="actions-end">
-    <button type="button" class="btn btn-primary" id="open-all-links"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>Abrir todos los links <span id="link-count" class="num"></span></button>
-  </div>
+<div class="actions-end">
+  <button type="button" class="btn btn-primary" id="open-all-links"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>Abrir todos los links <span id="link-count" class="num"></span></button>
+</div>
 
 </div>
 </main>
@@ -1024,128 +663,27 @@
 <script src="vendor/jquery-3.7.1.min.js"></script>
 <script src="vendor/datatables-2.3.2.min.js"></script>
 <script>
-      const themeSelect = document.getElementById("theme-mode");
-      if (themeSelect) {
-        themeSelect.value = MeridianTheme.get();
-        themeSelect.addEventListener("change", () => MeridianTheme.set(themeSelect.value));
-      }
-</script>
-<script>
-      // Agarramos los headers
-      let headers = $("#tablaConEstilo thead th")
-        .map(function (idx, th) {
-          return $(th).text().toLowerCase();
-        })
-        .get();
-
-      // Encontramos los índices por wildcard
-      let fecha_estimada = headers
-        .map((h, idx) => (h.includes("fecha estimada") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let fecha_compra = headers
-        .map((h, idx) => (h.includes("fecha compra") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let proyectoIndexes = headers
-        .map((h, idx) => (h.includes("proyecto") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let estadoIndex = headers
-        .map((h, idx) => (h.includes("estado") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let prioridadIndex = headers
-        .map((h, idx) => (h.includes("prioridad") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let precioIndexes = headers
-        .map((h, idx) => (h.includes("precio") ? idx : -1))
-        .filter((idx) => idx !== -1);
-      let urlIndexes = headers
-        .map((h, idx) => (h.includes("url") ? idx : -1))
-        .filter((idx) => idx !== -1);
-
-      $(document).ready(function () {
-        if (!$("#tablaConEstilo").length) return;
-        let tabla = $("#tablaConEstilo").DataTable({
-          paging: false,
-          searching: false,
-          scrollCollapse: true,
-          info: false,
-          order: [
-            [estadoIndex, "desc"],
-            [prioridadIndex, "asc"],
-          ],
-
-          columnDefs: [
-            {
-              targets: urlIndexes,
-              className: "url-column",
-            },
-            {
-              targets: precioIndexes,
-              className: "precio-column",
-            },
-            {
-              targets: fecha_estimada,
-              className: "fecha-column",
-              visible: false,
-            },
-            {
-              targets: fecha_compra,
-              className: "fecha-column",
-              visible: false,
-            },
-            {
-              targets: proyectoIndexes,
-              className: "proyecto-column",
-              visible: false,
-            },
-            {
-              targets: estadoIndex,
-              className: "estado-column",
-              visible: false,
-            },
-          ],
-        });
-
-        tabla.columns(fecha_compra, fecha_estimada).every(function () {
-          this.nodes()
-            .to$()
-            .each(function () {
-              let data = $(this).text();
-              if (data && data !== "null") {
-                $(this).text(
-                  new Date(data).toLocaleDateString("es-CL", {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit",
-                  }),
-                );
-              }
-            });
-        });
-        tabla.columns(precioIndexes).every(function () {
-          this.nodes()
-            .to$()
-            .each(function () {
-              let data = $(this).text();
-              if (data && data !== "null") {
-                let precio = new Intl.NumberFormat("es-CL", {
-                  style: "currency",
-                  currency: "CLP",
-                }).format(data);
-                $(this).text(precio.replace(/^(\D+)/, "$1 "));
-                // definimos un mínimo ancho para que no se corte
-                $(this).css("min-width", "120px"); // ajusta según necesites
-              }
-            });
-        });
-        const $links = $("#tablaConEstilo tbody a[href]");
-        $("#link-count").text(`(${$links.length})`);
-
-        $("#open-all-links").on("click", function () {
-          $links.each(function () {
-            window.open($(this).attr("href"), "_blank");
-          });
-        });
+  $(function () {
+    if (!$("#wishlist").length) return;
+    // Orden inicial por prioridad; las columnas se ordenan al hacer clic en la cabecera.
+    $("#wishlist").DataTable({
+      paging: false,
+      searching: false,
+      info: false,
+      order: [[2, "asc"]],
+      columnDefs: [
+        { targets: 1, className: "precio-column" },
+        { targets: 4, className: "url-column", orderable: false },
+      ],
+    });
+    const $links = $("#wishlist tbody a[href]");
+    $("#link-count").text(`(${$links.length})`);
+    $("#open-all-links").on("click", function () {
+      $links.each(function () {
+        window.open($(this).attr("href"), "_blank");
       });
+    });
+  });
 </script>
 </body>
 </html>
