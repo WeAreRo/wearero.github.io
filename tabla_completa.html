@@ -1,27 +1,53 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="es" data-app="Noco-Webhook" data-tint="neutral" data-shape="sharp" data-density="compact" data-voice="sans" data-numbers="inter">
 <head>
-<title>Tabla Completa</title>
-<script src="vendor/jquery-3.7.1.min.js"></script>
-<script src="vendor/datatables-2.3.2.min.js"></script>
-<link href="vendor/datatables-2.3.2.min.css" rel="stylesheet"/>
-<link href="tabla.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noco-Webhook - Tabla completa</title>
+<meta name="theme-color" content="#7b8da6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- theme.js va antes de las hojas: así el tema elegido se aplica sin parpadeo -->
+<script src="theme.js"></script>
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div>
-<div class="wh-test" id="contenedorNoco"><table class="tablaConEstilo" id="tablaConEstilo">
+<div class="app">
+<main class="main">
+<div class="page page-wide">
+
+  <a class="brand" href="./">
+    <img class="brand-mark" src="favicon.svg" alt="" width="32" height="32">
+    <span class="brand-text"><span class="brand-name">Noco-Webhook</span><span class="brand-version">v0.3.3</span></span>
+  </a>
+
+  <div class="page-head">
+    <div>
+      <h1>Tabla completa</h1>
+      <p class="muted small"><span class="num">114</span> registros</p>
+    </div>
+    <div class="toolbar">
+      <select aria-label="Tema" id="theme-mode">
+        <option value="auto">Automático</option>
+        <option value="light">Claro</option>
+        <option value="dark">Oscuro</option>
+        <option value="time">Según la hora</option>
+      </select>
+    </div>
+  </div>
+
+<table class="table" id="tablaConEstilo">
 <thead>
 <tr>
-<th>Nombre</th>
-<th>Precio</th>
-<th>Prioridad</th>
-<th>Categoría</th>
-<th>Estado</th>
-<th>Fecha estimada</th>
-<th>Proyecto</th>
-<th>Fecha compra</th>
-<th>URL</th>
+<th scope="col">Nombre</th>
+<th scope="col">Precio</th>
+<th scope="col">Prioridad</th>
+<th scope="col">Categoría</th>
+<th scope="col">Estado</th>
+<th scope="col">Fecha estimada</th>
+<th scope="col">Proyecto</th>
+<th scope="col">Fecha compra</th>
+<th scope="col">URL</th>
 </tr>
 </thead>
 <tbody>
@@ -1060,6 +1086,17 @@
 <td><ul><li><a href="https://www.mercadolibre.cl/videojuego-fisico-nintendo-switch-2-clasificacion-e-pokemon-pokopia/p/MLC65762576" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
 </tr>
 <tr>
+<td>Xenoblade Chronicles 3</td>
+<td>39990</td>
+<td>3. Baja</td>
+<td>Juegos</td>
+<td>Pendiente</td>
+<td>2030-12-31</td>
+<td></td>
+<td></td>
+<td><ul><li><a href="https://www.mercadolibre.cl/xenoblade-chronicles-3-standard-edition-fisico/p/MLC19472089" rel="noopener noreferrer" target="_blank">Link 1</a></li></ul></td>
+</tr>
+<tr>
 <td>Paper Mario: The Thousand-Year Door</td>
 <td>35338</td>
 <td>3. Baja</td>
@@ -1270,8 +1307,20 @@
 </tr>
 </tbody>
 </table>
+
+
 </div>
+</main>
 </div>
+<script src="vendor/jquery-3.7.1.min.js"></script>
+<script src="vendor/datatables-2.3.2.min.js"></script>
+<script>
+      const themeSelect = document.getElementById("theme-mode");
+      if (themeSelect) {
+        themeSelect.value = MeridianTheme.get();
+        themeSelect.addEventListener("change", () => MeridianTheme.set(themeSelect.value));
+      }
+</script>
 <script>
       // Agarramos los headers
       let headers = $("#tablaConEstilo thead th")
@@ -1298,6 +1347,7 @@
         .filter((idx) => idx !== -1);
 
       $(document).ready(function () {
+        if (!$("#tablaConEstilo").length) return;
         let tabla = $("#tablaConEstilo").DataTable({
           paging: false,
           searching: false,
@@ -1356,6 +1406,6 @@
             });
         });
       });
-    </script>
+</script>
 </body>
 </html>

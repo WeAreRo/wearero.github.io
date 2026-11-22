@@ -1,0 +1,94 @@
+/* app.css: lo propio de Noco-Webhook. Se carga después de base.css y siempre gana (ESTANDAR §11). */
+
+:root {
+  --accent: #7b8da6;
+}
+
+/* La tabla es parte de la página (el scroll es el de la página, sin contenedor propio) y la ordena
+   DataTables, sin su hoja de estilos. */
+.table {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.actions-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.table ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.table li + li {
+  margin-top: var(--space-1);
+}
+.table td {
+  padding-block: var(--space-2);
+  vertical-align: middle;
+}
+th.precio-column,
+td.precio-column {
+  text-align: right;
+  white-space: nowrap;
+}
+th.fecha-column,
+td.fecha-column {
+  white-space: nowrap;
+}
+th.url-column,
+td.url-column {
+  min-width: 7.5rem;
+}
+
+/* Cabecera: título e indicador de orden en la misma línea, sin saltos (DataTables los envuelve en un div). */
+.table th > div {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.table th.dt-orderable-asc,
+.table th.dt-orderable-desc {
+  cursor: pointer;
+  user-select: none;
+}
+.table th.precio-column > div {
+  justify-content: flex-end;
+}
+/* Indicador de orden (DataTables pone aria-sort en la cabecera ordenada). */
+.table th[aria-sort] .dt-column-order::after {
+  content: "";
+  display: block;
+  border-inline: 4px solid transparent;
+}
+.table th[aria-sort="ascending"] .dt-column-order::after {
+  border-bottom: 5px solid currentColor;
+}
+.table th[aria-sort="descending"] .dt-column-order::after {
+  border-top: 5px solid currentColor;
+}
+
+/* DataTables envuelve la tabla; sin controles de búsqueda ni paginado no deben ocupar espacio. */
+.dt-container .dt-layout-row:not(.dt-layout-table) {
+  display: none;
+}
+.dt-container .dt-layout-row {
+  margin: 0;
+}
+
+/* Celular: la primera columna queda fija al desplazar a los lados (ESTANDAR §11.1). */
+@media (max-width: 45rem) {
+  .table th:first-child,
+  .table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+  }
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
