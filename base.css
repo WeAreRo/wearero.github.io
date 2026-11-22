@@ -1,4 +1,4 @@
-/*! Meridian base.css v0.7.1 · copia de ~/Meridian/css/base.css · NO EDITAR (ESTANDAR §11)
+/*! Meridian base.css v0.8.0 · copia de ~/Meridian/css/base.css · NO EDITAR (ESTANDAR §11)
  *
  * Qué trae: tokens (escalas), las seis perillas de personalidad, tema claro/oscuro y los componentes
  * comunes. Lo propio de cada app va en app.css, que se carga DESPUÉS y siempre gana (esto va en capas).
@@ -252,6 +252,17 @@
     --shadow-sm: 0 1px 3px light-dark(rgb(20 24 34 / 0.1), rgb(0 0 0 / 0.4));
     --shadow-md: 0 8px 24px light-dark(rgb(20 24 34 / 0.14), rgb(0 0 0 / 0.45));
     --shadow-lg: 0 16px 48px light-dark(rgb(20 24 34 / 0.22), rgb(0 0 0 / 0.55));
+
+    /* Series de gráficos (siete categorías y «Otras»): marcas a 3:1 como mínimo sobre la superficie en claro y
+       oscuro. Una serie se identifica además con leyenda o etiqueta directa, nunca solo por el color. */
+    --series-1: light-dark(#2a78d6, #3987e5);
+    --series-2: light-dark(#eb6834, #d95926);
+    --series-3: light-dark(#00a571, #199e70);
+    --series-4: light-dark(#ca8000, #c98500);
+    --series-5: light-dark(#d86d96, #d55181);
+    --series-6: light-dark(#008300, #0ca30c);
+    --series-7: light-dark(#6250d6, #9085e9);
+    --series-other: light-dark(#92918c, #8a8985);
   }
 }
 
@@ -421,7 +432,16 @@
     flex-direction: column;
     gap: 2px;
   }
-  .nav a {
+  .nav button {
+    width: 100%;
+    border: 0;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .nav a,
+  .nav button {
     display: flex;
     align-items: center;
     gap: var(--space-3);
@@ -435,11 +455,13 @@
       background var(--t-fast) var(--ease),
       color var(--t-fast) var(--ease);
   }
-  .nav a:hover {
+  .nav a:hover,
+  .nav button:hover {
     background: var(--surface-2);
     color: var(--text);
   }
-  .nav a[aria-current="page"] {
+  .nav a[aria-current="page"],
+  .nav button[aria-current="page"] {
     background: var(--accent-soft);
     color: var(--accent-text);
     font-weight: var(--weight-strong);
@@ -510,7 +532,8 @@
       flex-direction: row;
       gap: 0;
     }
-    .nav a {
+    .nav a,
+    .nav button {
       flex: 1;
       flex-direction: column;
       justify-content: center;
@@ -610,6 +633,49 @@
     width: 100%;
   }
 
+  /* Control segmentado: elegir una opción entre pocas (semana / mes). Botones con aria-pressed o enlaces con
+     aria-current. Sus radios salen de la forma de la app, no son una píldora fija. */
+  .segmented {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--r1) + 3px);
+  }
+  .segmented > :is(button, a) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    height: max(1.75rem, calc(var(--ctrl) - 0.5rem));
+    padding: 0 var(--space-3);
+    border: 0;
+    border-radius: var(--r1);
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: var(--text-md);
+    font-weight: var(--weight-medium);
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background var(--t-fast) var(--ease),
+      color var(--t-fast) var(--ease);
+  }
+  .segmented > :is(button, a):hover {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .segmented > :is(button[aria-pressed="true"], a[aria-current]) {
+    background: var(--surface);
+    color: var(--text);
+    font-weight: var(--weight-strong);
+    box-shadow: var(--shadow-sm);
+  }
+
   /* Campos */
   input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="color"]),
   select,
@@ -623,6 +689,33 @@
     color: var(--text);
     font-size: var(--text-md);
     transition: border-color var(--t-fast) var(--ease);
+  }
+  input[type="file"] {
+    width: 100%;
+    height: var(--ctrl);
+    padding: 0 var(--space-3) 0 0;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r1);
+    background: var(--field);
+    color: var(--muted);
+    font-size: var(--text-md);
+    cursor: pointer;
+  }
+  input[type="file"]::file-selector-button {
+    height: calc(var(--ctrl) - 2px);
+    margin: 0 var(--space-3) 0 0;
+    padding: 0 var(--space-4);
+    border: 0;
+    border-right: 1px solid var(--line-strong);
+    border-radius: calc(var(--r1) - 1px) 0 0 calc(var(--r1) - 1px);
+    background: var(--surface-2);
+    color: var(--text);
+    font: inherit;
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+  }
+  input[type="file"]::file-selector-button:hover {
+    background: var(--line);
   }
   textarea {
     height: auto;
@@ -800,6 +893,22 @@
     border: 1px solid var(--line);
     border-radius: var(--r2);
   }
+  /* Variante para tablas con globos o menús que salen de una celda: no recorta lo que sobresale */
+  .table-wrap-visible {
+    overflow: visible;
+  }
+  .table-wrap-visible .table th:first-child {
+    border-top-left-radius: var(--r2);
+  }
+  .table-wrap-visible .table th:last-child {
+    border-top-right-radius: var(--r2);
+  }
+  .table-wrap-visible .table tr:last-child td:first-child {
+    border-bottom-left-radius: var(--r2);
+  }
+  .table-wrap-visible .table tr:last-child td:last-child {
+    border-bottom-right-radius: var(--r2);
+  }
   .table {
     width: 100%;
     border-collapse: collapse;
@@ -918,6 +1027,11 @@
   }
   .toast-error > .icon {
     color: var(--danger);
+  }
+  /* Los avisos de error no se van solos: llevan un botón para cerrarlos (aria-label="Cerrar aviso") */
+  .toast > .btn-icon {
+    margin-left: auto;
+    margin-right: calc(var(--space-2) * -1);
   }
   @keyframes meridian-toast-in {
     from {

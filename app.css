@@ -1,7 +1,7 @@
 /* app.css: lo propio de Optarium. Se carga después de base.css y siempre gana (ESTANDAR §11). */
 
 :root {
-  --accent: #7b8da6;
+  --accent: #6e8ff0;
 }
 
 /* Wishlist pública: la tabla es parte de la página (el scroll es el de la página, sin contenedor propio) y la
@@ -141,6 +141,36 @@ td.url-column {
   font-size: var(--text-xs);
   font-weight: var(--weight-strong);
 }
+.nav-group > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--space-4) 0 var(--space-1);
+  padding: 0 var(--space-3);
+  min-height: var(--ctrl);
+  border-radius: var(--r1);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.nav-group > summary::-webkit-details-marker {
+  display: none;
+}
+.nav-group > summary:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.nav-group > summary .icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--t-fast) var(--ease);
+}
+.nav-group:not([open]) > summary .icon {
+  transform: rotate(-90deg);
+}
 .nav a .num {
   margin-left: auto;
   color: var(--muted);
@@ -164,27 +194,6 @@ td.url-column {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
-}
-.segmented {
-  display: inline-flex;
-}
-.segmented .btn {
-  border-radius: 0;
-}
-.segmented .btn + .btn {
-  margin-left: -1px;
-}
-.segmented .btn:first-child {
-  border-radius: var(--r1) 0 0 var(--r1);
-}
-.segmented .btn:last-child {
-  border-radius: 0 var(--r1) var(--r1) 0;
-}
-.segmented .btn[aria-current="true"],
-.btn[aria-pressed="true"] {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent-text);
 }
 .chips {
   display: flex;
@@ -277,4 +286,329 @@ td.url-column {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* Una sola línea por columna; solo el nombre puede bajar a una segunda. */
+.table-wrap .table th,
+.table-wrap .table td {
+  white-space: nowrap;
+}
+.table-wrap .table td.cell-main {
+  min-width: 14rem;
+  white-space: normal;
+}
+
+/* Selector de categorías: lista propia que se filtra al escribir. */
+.combobox {
+  position: relative;
+}
+.combobox-list {
+  position: absolute;
+  inset: calc(100% + var(--space-1)) 0 auto 0;
+  z-index: 30;
+  max-height: 14rem;
+  margin: 0;
+  padding: var(--space-1);
+  overflow-y: auto;
+  list-style: none;
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r2);
+  box-shadow: var(--shadow-md);
+}
+.combobox-list[hidden] {
+  display: none;
+}
+.combobox-list li {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--r1);
+  cursor: pointer;
+}
+.combobox-list li[role="option"]:hover,
+.combobox-list li[aria-selected="true"] {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+.combobox-list .combobox-hint {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  cursor: default;
+}
+.combobox-list .combobox-hint[hidden] {
+  display: none;
+}
+
+/* Un poco de color, sin perder la sobriedad: el acento aparece en lo importante. */
+.stats .card {
+  border-top: 2px solid var(--accent);
+}
+.stat-value {
+  color: var(--accent-text);
+}
+.table-wrap .table thead th {
+  border-bottom-color: color-mix(in oklch, var(--accent) 45%, var(--line));
+}
+.table th a.sort:hover {
+  color: var(--accent-text);
+}
+.page-head h1 {
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+/* Ajustes: datos en dos columnas (nombre y valor). */
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-5);
+  margin: 0 0 var(--space-4);
+}
+.facts dt {
+  color: var(--muted);
+}
+.facts dd {
+  margin: 0;
+}
+.card > h2 {
+  margin-bottom: var(--space-2);
+}
+.card + .card,
+.form.card + .card {
+  margin-top: var(--space-4);
+}
+.form.card {
+  max-width: var(--w-read);
+}
+section.card {
+  max-width: var(--w-read);
+}
+
+/* ───────────── Gráfico de gasto proyectado ─────────────
+   Columnas apiladas por categoría. Los tonos son los de series de `base.css` (`--series-1` a `--series-7` y
+   `--series-other`). Cada categoría conserva su tono (por orden de creación); las que pasan de siete van en «Otras». */
+.viz-section {
+  margin-top: var(--space-6);
+}
+.viz-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.viz {
+  margin: 0;
+}
+.viz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+.viz-legend .swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: var(--space-2);
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+.viz-plot {
+  position: relative;
+  height: 14rem;
+  margin: var(--space-6) 0 0 3.75rem;
+  border-bottom: 1px solid var(--line-strong);
+}
+.viz-gridline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px solid var(--line);
+}
+.viz-ylabel {
+  position: absolute;
+  right: 100%;
+  padding-right: var(--space-2);
+  transform: translateY(50%);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+.viz-cols {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+}
+.viz-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.viz-col:not(.is-empty):hover {
+  background: color-mix(in oklch, var(--surface-2) 70%, transparent);
+}
+.viz-col:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.viz-total {
+  margin-bottom: var(--space-1);
+  color: var(--muted);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+.viz-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2px;
+  width: clamp(2px, calc(100% - 2px), 24px);
+}
+.viz-seg {
+  min-height: 2px;
+}
+.viz-seg:last-child {
+  border-radius: 4px 4px 0 0;
+}
+.viz-col:hover .viz-seg,
+.viz-col:focus-visible .viz-seg {
+  filter: brightness(1.12);
+}
+.viz-xaxis {
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  margin-left: 3.75rem;
+  padding-top: var(--space-2);
+}
+.viz-x {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.viz-x small {
+  font-size: var(--text-xs);
+  opacity: 0.8;
+}
+.viz-x.is-overdue {
+  color: var(--warn-text);
+}
+.viz-x .icon {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+.viz[data-view="day"] .viz-x {
+  align-items: flex-start;
+}
+.viz-table {
+  margin-top: var(--space-3);
+}
+.viz-table > summary {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.viz-table[open] > summary {
+  margin-bottom: var(--space-2);
+}
+.viz-notes {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.viz-tip {
+  position: fixed;
+  z-index: 70;
+  min-width: 12rem;
+  max-width: 20rem;
+  padding: var(--space-3);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r2);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-sm);
+  pointer-events: none;
+}
+.viz-tip[hidden] {
+  display: none;
+}
+.viz-tip-title {
+  margin-bottom: var(--space-2);
+  color: var(--muted);
+}
+.viz-tip-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.viz-tip-key {
+  flex: none;
+  width: 0.75rem;
+  height: 3px;
+  border-radius: 2px;
+}
+.viz-tip-row b {
+  margin-left: auto;
+  padding-left: var(--space-3);
+  font-weight: var(--weight-strong);
+}
+.viz-tip-total {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line);
+}
+
+/* Cortes del resumen */
+.section-title {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+.stats-wide {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  margin-top: var(--space-6);
+}
+.stats-wide .card {
+  overflow-x: auto;
+}
+.stats-wide .table {
+  border: 0;
+}
+td.share {
+  white-space: nowrap;
+}
+.bar {
+  display: inline-block;
+  width: 4rem;
+  height: 6px;
+  margin-right: var(--space-2);
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--line);
+  vertical-align: middle;
+}
+.bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.date-input {
+  width: 9rem;
+}
+.bulk-bar .date-input {
+  flex: none;
 }
